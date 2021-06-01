@@ -1,0 +1,13 @@
+Running in wrapper mode for job id: 23663
+Running python job.
+
+Job id 23663 enter CPS 2-stage pipeline main function
+log duration: 6.739367869472685, log costs: -0.9982792898203241
+Got job result 6.73937 
+
+Job file reloaded.
+Completed successfully in 0.32 seconds.  Configuration running duration: 845.02640 seconds.
+setting job 23663 complete
+params:  [22, 5, 41, 5]
+add complete:  [[20, 0, 18, 1], [33, 2, 32, 4], [40, 1, 40, 2], [36, 4, 35, 5], [33, 3, 32, 7], [32, 3, 42, 6], [37, 3, 27, 6], [28, 4, 31, 5], [32, 3, 32, 5], [23, 5, 31, 7], [24, 3, 31, 7], [33, 1, 32, 6], [35, 1, 30, 7], [32, 1, 31, 5], [30, 0, 37, 7], [36, 1, 29, 6], [28, 3, 26, 7], [24, 5, 35, 3], [38, 2, 31, 6], [35, 3, 34, 3], [22, 5, 41, 5]]
+set...

@@ -1,0 +1,4 @@
+Best result: nan
+Job-id: -1
+Parameters: 
+[1472, 32, 1664, 32]

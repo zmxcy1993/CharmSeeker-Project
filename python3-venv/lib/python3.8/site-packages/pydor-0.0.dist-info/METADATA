@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: pydor
+Version: 0.0
+Summary: PYthon venDOR dependencies
+Home-page: https://pypi.org/project/pydor
+Author: Jeremías Casteglione
+Author-email: jrmsdev@gmail.com
+License: BSD
+Project-URL: Source, https://github.com/jrmsdev/pydor
+Project-URL: Tracker, https://github.com/jrmsdev/pydor/issues
+Keywords: dependencies,deps,vendor
+Platform: linux
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: ~=3.6
+Description-Content-Type: text/markdown
+
+# pydor
+
+PYthon venDOR dependencies
+
+

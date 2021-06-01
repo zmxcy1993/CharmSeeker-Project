@@ -1,0 +1,13 @@
+Running in wrapper mode for job id: 559
+Running python job.
+
+Job id 559 enter CPS 2-stage pipeline main function
+log duration: 6.963905907399125, log costs: -1.0131706430623906
+Got job result 6.96391 
+
+Job file reloaded.
+Completed successfully in 0.36 seconds.  Configuration running duration: 1057.75700 seconds.
+setting job 559 complete
+params:  [23, 5, 31, 7]
+add complete:  [[20, 0, 18, 1], [33, 2, 32, 4], [40, 1, 40, 2], [36, 4, 35, 5], [33, 3, 32, 7], [32, 3, 42, 6], [37, 3, 27, 6], [28, 4, 31, 5], [32, 3, 32, 5], [23, 5, 31, 7]]
+set...
