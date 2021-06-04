@@ -26,7 +26,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def two_levels_optimization(opts):
+def two_steps_optimization(opts):
     expt_num, budget_min = start_cost_optimization(opts.pipe_stages, opts.max_expt, opts.initial_cost_steps,
                                                    opts.pipe_budget, opts.grid_seed)
     if budget_min.size == 0:
@@ -132,5 +132,5 @@ if __name__ == '__main__':
         # Different from 2-stage or 3-stage pipelines, the memory step of 5-stage pipeline is 256MB instead of 64MB
         grid_sizes = [64, 64, 128, 64, 128]
         options.max_expt = 12
-    two_levels_optimization(options)
+    two_steps_optimization(options)
 

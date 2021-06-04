@@ -16,8 +16,8 @@ do
     	done
     	awk 'BEGIN{print}' >> search-cost-$budget
     	
-    	awk 'NR==FNR {a[NR]=$0} NR!=FNR {for(i=1;i<=12;i++) print $0,a[i]}' tmp-res-5 tmp-res-4 > tmp-45
-    	awk 'NR==FNR {a[NR]=$0} NR!=FNR {for(i=1;i<=12*12;i++) print $0,a[i]}' tmp-45 tmp-res-3 > tmp-345
+    awk 'NR==FNR {a[NR]=$0} NR!=FNR {for(i=1;i<=12;i++) print $0,a[i]}' tmp-res-5 tmp-res-4 > tmp-45
+    awk 'NR==FNR {a[NR]=$0} NR!=FNR {for(i=1;i<=12*12;i++) print $0,a[i]}' tmp-45 tmp-res-3 > tmp-345
 		awk 'NR==FNR {a[NR]=$0} NR!=FNR {for(i=1;i<=12*12*12;i++) print $0,a[i]}' tmp-345 tmp-res-2 > tmp-2345
 		awk 'NR==FNR {a[NR]=$0} NR!=FNR {for(i=1;i<=12*12*12*12;i++) print $0,a[i]}' tmp-2345 tmp-res-1 > tmp-12345
 	

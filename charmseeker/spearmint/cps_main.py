@@ -5,7 +5,6 @@ import os
 import sys
 import signal
 import math
-import json
 
 sys.path.append(os.path.realpath(__file__))
 
@@ -14,7 +13,6 @@ from helpers import *
 from runner import job_runner
 
 
-# --grid_size=7683000 for random and sequential methods
 def parse_args():
     parser = optparse.OptionParser(usage="\n\tspearmint [options] <experiment/config.pb>")
 
@@ -298,13 +296,6 @@ class SearchCost:
         return file_dic
 
 
-# Cleanup locks and processes on ctl-c
-def sigint_handler():
-    sys.exit(0)
-
-
 if __name__ == '__main__':
-    print("setting up signal handler...")
-    signal.signal(signal.SIGINT, sigint_handler)
     main()
 

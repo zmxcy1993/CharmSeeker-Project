@@ -5,9 +5,9 @@ for budget in 0.361308 0.361601 0.363456 0.36592 0.368373 0.38177
 do
 	for iteration in {1..20}
 	do
-		../clean.sh
+		  ../clean.sh
 
-        python ../../spearmint/sbo_main.py --grid-seed=1 --pipeline-budget=$budget
+      python ../../spearmint/sbo_main.py --grid-seed=1 --pipeline-budget=$budget
 
     	for stage in 1 2
     	do

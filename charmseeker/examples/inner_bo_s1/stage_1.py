@@ -9,6 +9,7 @@ config = botocore.config.Config(connect_timeout=900, read_timeout=900, retries={
 client = boto3.client('lambda', config=config)
 function_name = 'pipe-decoder-p'
 time_out = 900
+total_workload = 390
 
 
 def invoke_function_once(payload, memory_size):
@@ -25,22 +26,13 @@ def get_function_value(memory, workload):
     config_res = client.update_function_configuration(FunctionName=function_name, Timeout=time_out, MemorySize=memory)
     print(f'Update function {function_name} Configuration: memory_size {memory}, workload {workload}')
 
-    invoke_numbers = 32 / workload
+    invoke_numbers = math.ceil(total_workload / workload)
     pool = ThreadPool(invoke_numbers)
     durations = []
     costs = []
     results = []
-    res = []
 
     if config_res['ResponseMetadata']['HTTPStatusCode'] == 200:
-        if workload != 1:
-            for i in range(invoke_numbers):
-                start = i * workload
-                end = (i + 1) * workload - 1
-                pay_load = f'{"start": {start},"end": {end}}'
-                res.append(pool.apply_async(invoke_function_once, (pay_load, memory)))
-            res = [r.get() for r in res]
-
         for i in range(invoke_numbers):
             start = i * workload
             end = (i + 1) * workload - 1
@@ -48,16 +40,14 @@ def get_function_value(memory, workload):
             results.append(pool.apply_async(invoke_function_once, (pay_load, memory)))
 
         results = [r.get() for r in results]
-        results.extend(res)
         for i in results:
             durations.append(i[0])
             costs.append(i[1])
-        mean_cost = numpy.mean(costs) / workload * 390
-        mean_duration = numpy.mean(durations)
-        print('decoder: ', mean_duration, mean_cost)
-        return math.log(mean_duration), math.log(mean_cost)
+        total_cost = numpy.sum(costs)
+        max_duration = numpy.max(durations)
+        return math.log(max_duration), math.log(total_cost)
 
-    return math.log(900), math.log(0.0000166667 / 1024 * memory * 900 + 0.0000002)
+    return math.log(time_out), math.log((0.0000166667 / 1024 * memory * time_out + 0.0000002) * invoke_numbers)
 
 
 def main(job_id, parameters):
