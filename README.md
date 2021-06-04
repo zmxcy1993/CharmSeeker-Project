@@ -4,7 +4,7 @@ It is implemented based on the [Spearmint](https://github.com/JasperSnoek/spearm
 
 ## Prerequisites
 
-To run the code, you first need to activate the python virtual environment in directory `python3-ven` or install the required packages through `pip -r requirements.txt`.
+To run the code, you first need to activate the python virtual environment in directory `python3-venv` or install the required packages through `pip3 -r requirements.txt`.
 
 ## Run SBO
 
